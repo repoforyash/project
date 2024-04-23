@@ -1,0 +1,114 @@
+<div class="container" style="margin-left:30px">
+    
+    <div class="header">
+        <h3>Add Loan Application</h3>
+    </div>
+    
+    <div [hidden]="submitted" style="width: 400px;">
+    <form  class="form" [formGroup]="formData" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value)">
+
+        <div class="left-form">
+
+            <div class="form-group">
+                <label for="custId">Customer Id:</label>
+                <input type="text" class="form-control" formControlName="custId" id="custId" [required]="true" name="custId">
+                <span *ngIf="formData.controls['custId']?.invalid && formData.controls['custId']?.touched">
+                    <p style="color: red;">Customer Id should be exactly 6 characters!!!!</p>
+                </span>
+                <span *ngIf="formData.controls['custId'].errors?.['required'] && formData.controls['custId']?.touched">
+                    <p style="color: red;">Customer Id cannot be blank!!!!</p>
+                </span> 
+            </div>
+
+            <div class="form-group">
+                <label for="noOfYears">No Of Years:</label>
+                <input type="number" class="form-control" formControlName="noOfYears" id="noOfYears" [required]="true" name="noOfYears">
+              <span *ngIf="formData.controls['noOfYears'].errors?.['required'] && formData.controls['noOfYears']?.touched">
+                  <p style="color: red;">No Of Years cannot be blank!!!!</p>
+              </span> 
+            </div>
+
+            <div class="form-group">
+                <label for="appStatus">App Status:</label>
+                <select id="appStatus" class="form-control" class="form-control" name="appStatus" formControlName="appStatus"  [required]="true" >
+                        <option value="NewLoan">New Loan</option>
+                </select>
+                <span *ngIf="formData.controls['appStatus'].errors?.['required'] && formData.controls['appStatus']?.touched">
+                    <p style="color: red;">App status cannot be blank!!!!</p>
+                </span>
+            </div>  
+
+            <div class="form-group">
+                <label for="loanAppDate">Loan App Date:</label>
+                <input type="date" class="form-control" formControlName="loanAppDate" id="loanAppDate" [required]="true"  name="loanAppDate">
+                <span *ngIf="formData.controls['loanAppDate']?.invalid && formData.controls['loanAppDate']?.touched">
+                    <p style="color: red;">Loan Application date should be current date!!</p>
+                </span>
+                <span *ngIf="formData.controls['loanAppDate'].errors?.['required'] && formData.controls['loanAppDate']?.touched">
+                    <p style="color: red;">Loan Application date cannot be blank!!!!</p>
+                </span> 
+            </div>
+
+
+        </div>
+
+
+
+        <div class="right-form">
+
+
+            <div class="form-group">
+                <label for="loanAmt">Loan Amount:</label>
+                <input type="number" class="form-control" formControlName="loanAmt" id="loanAmt" [required]="true" name="loanAmt">
+                <span *ngIf="formData.controls['loanAmt'].errors?.['required'] && formData.controls['loanAmt']?.touched">
+                    <p style="color: red;">Loan Amount cannot be blank!!!!</p>
+                </span> 
+            </div>
+
+            
+            <div class="form-group">
+                <label for="purpose">Purpose:</label>
+                <input type="text" class="form-control" formControlName="purpose" id="purpose" [required]="true" name="purpose">
+                <span *ngIf="formData.controls['purpose'].errors?.['required'] && formData.controls['purpose']?.touched">
+                    <p style="color: red;">Purpose cannot be blank!!!!</p>
+                </span> 
+            </div>
+
+            <div class="form-group">
+            <label for="typeOfLoan" >Type of Loan:</label>
+                <select id="typeOfLoan"   class="form-control" formControlName="typeOfLoan" name="typeOfLoan" [required]="true" >
+                <option value="GoldLoan">Gold Loan</option>
+                <option value="CarLoan">Car Loan</option>
+                <option value="HomeLoan">Home Loan</option>
+                <option value="PersonalLoan">Personal Loan</option>
+                </select>
+                <span *ngIf="formData.controls['typeOfLoan'].errors?.['required'] && formData.controls['typeOfLoan']?.touched">
+                    <p style="color: red;">Type of Loan cannot be blank!!!!</p>
+                </span> 
+            </div>
+
+            <div class="form-group">           
+                <label for="status" class="form-control" formControlName="status">Status:</label>
+                <select id="status" name="status"  [required]="true" >
+                    <option value="No Status">No Status</option>
+                </select>
+                <span *ngIf="formData.controls['status'].errors?.['required'] && formData.controls['status']?.touched">
+                    <p style="color: red;">Please set the status!</p>
+                </span> 
+            </div>
+
+
+        
+            <button type="submit" class="btn" (click)="addLoanApplication()">Save</button>
+        </div>
+        
+
+
+</form>
+</div>
+
+<div [hidden]="!submitted">
+    <h4>Loan Application submitted successfully!</h4>
+</div>
+
+</div>

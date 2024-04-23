@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<br />
+
+  <div *ngIf="isLoggedIn()" class="container">
+    <div>
+          <div class="username"> <br/>
+              User Name :
+              <input type="text" name="username" [(ngModel)]="username" /> 
+          </div>
+          <div class="password"><br/>
+            Password :
+            <input type="password" name="password" [(ngModel)]="password" />
+          </div>
+    </div>
+    <button (click)="checkLogin()" class="btn3">Login</button>
+  </div>
+<br/>
+  <div *ngIf="loginError" class="alert alert-danger">
+    {{ loginError }}
+  </div>
+<br />
+<br />
+
+<router-outlet></router-outlet>

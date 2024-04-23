@@ -1,0 +1,244 @@
+<div class="container" style="margin-left: 30px">
+  <div class="header">
+    <h3>Add Customer Details</h3>
+  </div>
+
+  <div [hidden]="submitted" >
+    <form
+      class="form"
+      [formGroup]="formData"
+      #registerForm="ngForm"
+      (ngSubmit)="onSubmit(registerForm.value)"
+    >
+      <div class="left-form">
+        <div class="form-group">
+          <label for="custFirstName">First Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="custFirstName"
+            id="custFirstName"
+            [required]="true"
+            name="custFirstName"
+          />
+          <span
+            *ngIf="formData.controls['custFirstName'].errors?.['required'] && formData.controls['custFirstName']?.touched"
+          >
+            <p style="color: red">Customer First Name cannot be blank!!!!</p>
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="address"
+            id="address"
+            [required]="true"
+            name="address"
+          />
+          <span
+            *ngIf="formData.controls['address'].errors?.['required'] && formData.controls['address']?.touched"
+          >
+            <p style="color: red">Address cannot be blank!!!!</p>
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="city"
+            id="city"
+            [required]="true"
+            name="city"
+          />
+          <span
+            *ngIf="formData.controls['city'].errors?.['required'] && formData.controls['city']?.touched"
+          >
+            <p style="color: red">City cannot be blank!!!!</p>
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="contactNo">Contact No:</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="contactNo"
+            id="contactNo"
+            [required]="true"
+            name="contactNo"
+          />
+          <span
+            *ngIf="
+              formData.controls['contactNo']?.invalid &&
+              formData.controls['contactNo']?.touched
+            "
+          >
+            <p style="color: red">Contact Number should be 10 digits!!!!</p>
+          </span>
+          <span
+            *ngIf="formData.controls['contactNo'].errors?.['required'] && formData.controls['contactNo']?.touched"
+          >
+            <p style="color: red">Contact No cannot be blank!!!!</p>
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="emailId">Email Id:</label>
+          <input
+            type="email"
+            class="form-control"
+            formControlName="emailId"
+            id="emailId"
+            [required]="true"
+            name="emailId"
+          />
+          <span
+            *ngIf="
+              formData.controls['emailId']?.invalid &&
+              formData.controls['emailId']?.touched
+            "
+          >
+            <p style="color: red">
+              Email Id should end with @cognizant.com!!!!
+            </p>
+          </span>
+          <span
+            *ngIf="formData.controls['emailId'].errors?.['required'] && formData.controls['emailId']?.touched"
+          >
+            <p style="color: red">Email Id cannot be blank!!!!</p>
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="monthlySalary"> Monthly Salary:</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="monthlySalary"
+            id="monthlySalary"
+            [required]="true"
+            name="monthlySalary"
+          />
+          <span
+            *ngIf="formData.controls['monthlySalary'].errors?.['required'] && formData.controls['monthlySalary']?.touched"
+          >
+            <p style="color: red">Monthly Salary cannot be blank!!!!</p>
+          </span>
+        </div>
+      </div>
+      <div class="right-form">
+        <div class="form-group">
+          <label for="custLastName">Last Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="custLastName"
+            id="custLastName"
+            [required]="true"
+            name="custLastName"
+          />
+          <span
+            *ngIf="
+              formData.controls['custLastName']?.invalid &&
+              formData.controls['custLastName']?.touched
+            "
+          >
+            <p style="color: red">
+              Customer Last Name should be greater than 3 characters!!!!
+            </p>
+          </span>
+          <span
+            *ngIf="formData.controls['custLastName'].errors?.['required'] && formData.controls['custLastName']?.touched"
+          >
+            <p style="color: red">Customer Last Name cannot be blank!!!!</p>
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="state">State:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="state"
+            id="state"
+            [required]="true"
+            name="state"
+          />
+          <span
+            *ngIf="formData.controls['state'].errors?.['required'] && formData.controls['state']?.touched"
+          >
+            <p style="color: red">State cannot be blank!!!!</p>
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="adharCard">Adhar Card:</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="adharCard"
+            id="adharCard"
+            [required]="true"
+            name="adharCard"
+          />
+          <span
+            *ngIf="formData.controls['adharCard'].errors?.['required'] && formData.controls['adharCard']?.touched"
+          >
+            <p style="color: red">Adhar Card cannot be blank!!!!</p>
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="birthDate">Birth Date:</label>
+          <input
+            type="date"
+            class="form-control"
+            formControlName="birthDate"
+            id="birthDate"
+            [required]="true"
+            name="birthDate"
+          />
+          <span
+            *ngIf="formData.controls['birthDate'].errors?.['required'] && formData.controls['birthDate']?.touched"
+          >
+            <p style="color: red">Birth Date cannot be blank!!!!</p>
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="loanType" >Type of Loan:</label>
+          <select
+            class="form-control"
+            id="loanType"
+            name="loanType"
+            formControlName="loanType"
+            [required]="true"
+          >
+            <option value="GoldLoan">Gold Loan</option>
+            <option value="CarLoan">Car Loan</option>
+            <option value="HomeLoan">Home Loan</option>
+            <option value="PersonalLoan">Personal Loan</option>
+          </select>
+          <span
+            *ngIf="formData.controls['loanType'].errors?.['required'] && formData.controls['loanType']?.touched"
+          >
+            <p style="color: red">Type of loan cannot be blank!!!!</p>
+          </span>
+        </div>
+
+        <button type="submit" class="btn" (click)="registerCustomer()">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h4>Customer information submitted successfully!</h4>
+  </div>
+</div>

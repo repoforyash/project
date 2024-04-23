@@ -1,0 +1,94 @@
+<div class="container" style="margin-left:30px">
+    
+    <div class="header">
+        <h3>Update Loan Application</h3>
+    </div>
+
+    <div  style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="view">
+
+            <div class="form-group">
+                <label for="loanAppId">Loan App Id:</label>
+                <input type="text" class="form-control" id="LAUloanAppId" required [(ngModel)]="loanApplication.loanAppId" name="loanAppId">
+            </div>
+
+            <div class="form-group">
+                <button type="button" style="margin-top: 5px;" class="btn3" (click)="viewLoanApplication()">View Loan Application</button>
+            </div>      
+        </div>
+     
+    <div class="form">
+
+        <div class="left-form">
+
+            <div class="form-group">
+                <label for="loanAmt">Loan Amount:</label>
+                <input type="number" class="form-control" id="LAUIloanAmt" required [(ngModel)]="loanApplication.loanAmt" name="loanAmt" [readonly]="!isEditable">
+            </div>
+
+            <div class="form-group">
+                <label for="purpose">Purpose:</label>
+                <input type="text" class="form-control" id="LAUpurpose" required [(ngModel)]="loanApplication.purpose" name="purpose">
+            </div>
+
+            <div class="form-group">
+                <label for="typeOfLoan" >Type of Loan:</label>
+                    <select id="LAUtypeOfLoan" name="typeOfLoan" class="form-control" required [(ngModel)]="loanApplication.typeOfLoan" >
+                    <option value="Gold">Gold Loan</option>
+                    <option value="Car">Car Loan</option>
+                    <option value="Home">Home Loan</option>
+                    <option value="Personal">Personal Loan</option>
+                    <option value="Land">Land Loan</option>
+                    </select>
+            </div>   
+            
+            <div class="form-group">           
+                <label for="status">Status:</label>
+                <select id="LAUstatus" name="status"  class="form-control" required [(ngModel)]="loanApplication.status" [disabled]="!isStatusEditable">
+                    <option value="Accepted">Accepted</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="NoStatus">No Status</option>
+                </select>
+            </div>
+
+        </div>
+
+
+        <div class="right-form">
+
+            <div class="form-group">
+                <label for="noOfYears">No Of Years:</label>
+                <input type="number" class="form-control" id="LAUnoOfYears" required [(ngModel)]="loanApplication.noOfYears" name="noOfYears" [readonly]="!isEditable">
+            </div>
+
+            <div class="form-group">
+                <label for="appStatus">App Status:</label>
+                <select id="LAUappStatus" name="appStatus" class="form-control" required [(ngModel)]="loanApplication.appStatus" disabled>
+                        <option [value]="'NewLoan'" selected="loanApplication.appStatus ==='NewLoan'">New Loan</option>
+                        <option value="Approved" selected="loanApplication.appStatus ==='Approved'">Approved</option>
+                        <option value="Cancelled" selected="loanApplication.appStatus ==='Cancelled'">Cancelled</option>
+                        <option value="Sanctioned" selected="loanApplication.appStatus ==='Sanctioned'">Sanctioned</option>
+        
+                </select>
+            </div>   
+
+            <div class="form-group">
+                <label for="loanAppDate">Loan App Date:</label>
+                <input type="date" class="form-control" id="LAUloanAppDate" class="form-control" required [(ngModel)]="loanApplication.loanAppDate" name="loanAppDate" readonly>
+            </div>
+            <div class="update-btn">
+                <button type="submit" class="btn5" (click)="updateLoanApplication()">Update</button>
+            </div>
+
+        </div>
+    </div>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+    <h4>Loan Application updated successfully!</h4>
+</div>
+
+</div>

@@ -1,0 +1,48 @@
+<div [hidden]="submitted" style="width: 400px;">
+    <form>
+        <div class="form-group">
+            <label for="custId">Customer Id:</label>
+            <input type="text" class="form-control" id="custId" required [(ngModel)]="customer.custId" name="custId">
+        </div>
+        <button type="submit" class="btn btn-success">Search</button>
+    </form>
+</div>
+{{noRecordFound}}
+<div [hidden]="!submitted && !noRecordFound">
+    <div class="col-md-6">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Customer Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Contact No</th>
+            <th>Adhar Card</th>
+            <th>Email Id</th>
+            <th>Birth Date</th>  
+            <th>Monthly Salary</th>
+      
+          </tr>
+        </thead>
+          <tbody>
+          <tr>
+              <td>{{customer.custId}}</td>
+              <td>{{customer.custFirstName}}</td>
+              <td>{{customer.custLastName}}</td>
+              <td>{{customer.address}}</td>
+              <td>{{customer.city}}</td>
+              <td>{{customer.state}}</td>
+              <td>{{customer.contactNo}}</td>
+              <td>{{customer.adharCard}}</td>
+              <td>{{customer.emailId}}</td>
+              <td>{{customer.birthDate}}</td>
+              <td>{{customer.monthlySalary}}</td>                             
+          
+          </tr>
+          </tbody>
+        </table>
+        </div>
+</div>

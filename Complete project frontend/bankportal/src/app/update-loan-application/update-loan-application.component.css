@@ -1,0 +1,102 @@
+
+.btn3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    border: none;
+  
+    color: #fff;
+    background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+     background-origin: border-box;
+    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+   
+  }
+  
+  .btn3:focus {
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
+  }
+
+  
+  .form-control {
+    
+    width: 300px;
+  }
+  .container {
+    margin: 0 auto; /* Center the container horizontally */
+    width: 80%; /* Set the width of the container */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    border: 1px solid royalblue; 
+    color: royalblue; 
+    text-align: center; 
+    margin-bottom: 1rem;
+    margin-left: 8.5rem;
+    background: hsl(219, 100%, 91%);
+  }
+
+  .form{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    margin-left: 19.5rem;
+  
+  }
+
+  .view{
+    margin-left:8rem;
+  }
+
+
+  .form-group {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Align form elements vertically */
+    margin-bottom: 20px; /* Add margin between form groups */
+    margin-left: 11rem;
+  }
+  
+  .update-btn{
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Align form elements vertically */
+    margin-bottom: 20px; /* Add margin between form groups */
+    margin-left:9.1rem;
+  }
+
+
+  .form-group label {
+    margin-bottom: 5px; /* Add margin below the label */
+  }
+  
+  
+  .form-group input,
+  .form-group select {
+    padding: 10px; /* Add padding to form elements */
+    border: 1px solid #ccc; /* Add border to form elements */
+    border-radius: 5px; /* Add border radius to form elements */
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px; /* Add padding to the submit button */
+    background-color: royalblue; /* Set background color */
+    color: white; /* Set text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    width: 350px ;
+    margin-left: 2rem;
+    /* height: 80px; */
+  }
+
+  
